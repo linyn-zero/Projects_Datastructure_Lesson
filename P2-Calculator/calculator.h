@@ -15,8 +15,6 @@
 #include <cmath>
 #include <iomanip>
 using namespace std;
-
-
 /* 总会将上一次的计算结果放在输入的开头，首次计算前是0
  * =的功能是清除等号之前的所有输入
  * 不支持^^
@@ -33,11 +31,12 @@ public:
 	calculator() ;
 	void welcome();      // 计算器启动时的介绍语
 	void perform();      // 启动一次完整的计算操作（读入、计算），是计算器的核心入口
+protected:
 	void initInput();    // 进行读取输入，并进行去空格、检查括号等预处理
 	void checkBracket(); // 括号检查
 	void calculate();    // 进行计算（对本次处理后的读取）
 	void oneCalcu();     // 进行单次运算
 	void clearStack();   // 清理两栈，是异常处理以及实现'='功能所需的
-	void showModel();
+	void showModel();    // 展示模式
 };
 #endif //CALCULATOR_CALCULATOR_H

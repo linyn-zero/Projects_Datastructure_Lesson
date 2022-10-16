@@ -1,7 +1,4 @@
-#include <iostream>
 #include "calculator.h"
-#include <queue>
-
 
 int main() {
 	calculator cal;
@@ -12,5 +9,5 @@ int main() {
 }
 
 /*
- * bug 1: = 6*7^2 会 syntax error
+ * bug 1: = 6*7^2 会 syntax error  已解决：将input[i]改正为input[i-1]
  */

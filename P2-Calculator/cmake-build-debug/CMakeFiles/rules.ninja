@@ -42,7 +42,7 @@ rule CXX_EXECUTABLE_LINKER__Calculator_Debug
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = "D:\APPs\CLion 2021.3.2\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SD:\C++codes\Calculator -BD:\C++codes\Calculator\cmake-build-debug
+  command = "D:\APPs\CLion 2021.3.2\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SD:\github\Projects_Datastructure_Lesson\P2-Calculator -BD:\github\Projects_Datastructure_Lesson\P2-Calculator\cmake-build-debug
   description = Re-running CMake...
   generator = 1
 

@@ -1,3 +1,3 @@
-D:/C++codes/Calculator/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-D:/C++codes/Calculator/cmake-build-debug/CMakeFiles/Calculator.dir
-D:/C++codes/Calculator/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/github/Projects_Datastructure_Lesson/P2-Calculator/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/github/Projects_Datastructure_Lesson/P2-Calculator/cmake-build-debug/CMakeFiles/Calculator.dir
+D:/github/Projects_Datastructure_Lesson/P2-Calculator/cmake-build-debug/CMakeFiles/edit_cache.dir

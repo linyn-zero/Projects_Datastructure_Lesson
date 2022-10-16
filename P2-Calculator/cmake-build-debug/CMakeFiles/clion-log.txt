@@ -1,4 +1,16 @@
-"D:\APPs\CLion 2021.3.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=D:/APPs/CLion 2021.3.2/bin/ninja/win/ninja.exe" -G Ninja D:\C++codes\Calculator
+"D:\APPs\CLion 2021.3.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=D:/APPs/CLion 2021.3.2/bin/ninja/win/ninja.exe" -G Ninja D:\github\Projects_Datastructure_Lesson\P2-Calculator
+-- The C compiler identification is GNU 11.2.0
+-- The CXX compiler identification is GNU 11.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: D:/APPs/CLion 2021.3.2/bin/mingw/bin/gcc.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: D:/APPs/CLion 2021.3.2/bin/mingw/bin/g++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: D:/C++codes/Calculator/cmake-build-debug
+-- Build files have been written to: D:/github/Projects_Datastructure_Lesson/P2-Calculator/cmake-build-debug
