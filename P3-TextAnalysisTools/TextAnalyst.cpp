@@ -183,7 +183,7 @@ int TextAnalyst::myKMP(const string& str, const string& model)  {
 bool TextAnalyst::trimLine2Word(string &line, string &word) {
 	word.clear();
 	int index{};
-	while(index < line.size() && std::isalpha(line[index])) {
+	while(index < line.size() && (std::isalpha(line[index]) || line[index] == '_')) {
 		word += tolower(line[index++]);
 	}
 	if(index+1 < line.size() && line[index] == '\'' && line[index + 1] == 's'){ // ´¦Àí¡°'s¡±
