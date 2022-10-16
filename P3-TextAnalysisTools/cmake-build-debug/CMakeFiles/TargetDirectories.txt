@@ -1,0 +1,3 @@
+D:/github/Projects_Datastructure_Lesson/P3-TextAnalysisTools/cmake-build-debug/CMakeFiles/TextAnalysisTools.dir
+D:/github/Projects_Datastructure_Lesson/P3-TextAnalysisTools/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/github/Projects_Datastructure_Lesson/P3-TextAnalysisTools/cmake-build-debug/CMakeFiles/rebuild_cache.dir
