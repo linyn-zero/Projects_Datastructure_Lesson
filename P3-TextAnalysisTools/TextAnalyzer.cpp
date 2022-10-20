@@ -63,7 +63,7 @@ void TextAnalyst::initContainer() {
 				if(!word.empty()) {
 					wordsByDict[word]++;             //单词总数++
 					wordsLine[word][lineIndex]++;    //该行单词数++
-					cout << word << " " ;
+//					cout << word << " " ;
 					for(const string& keyword : keyWords){  // 将关键字预处理到成员变量Existing_keywords中
 						if(word == keyword){
 							findKeyword.insert(keyword);
@@ -73,7 +73,7 @@ void TextAnalyst::initContainer() {
 				if(stopFlag2) { break; }
 				stopFlag2 = !trimLine2Word(isLine, word);  //修剪单词
 			}
-			cout << std::endl; // 检查输入是否正常
+//			cout << std::endl; // 检查输入是否正常
 			lineIndex++;
 		}
 		if(stopFlag1) { break; }
@@ -146,7 +146,7 @@ void TextAnalyst::InputSearch() const {
 }
 void TextAnalyst::ShowAllWord_byVECTOR(const vector<string>& words) const {
 	cout <<std::endl << "The Searching outcome:" << std::endl;
-	cout << std::setw(10) << std::right << "Word" << std::setw(15) << std::left << "List" << std::right << "Number" << std::endl;
+	cout << std::setw(10) << std::right << "Word" << std::setw(30) << std::left << "List" << std::right << "Number" << std::endl;
 	int i = 0;
 	for(auto & word : words){
 		cout << i++ << ". " <<  std::setw(25) << std::left << word << wordsByDict.find(word)->second << std::endl;
