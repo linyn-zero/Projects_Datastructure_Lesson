@@ -44,7 +44,6 @@ class TextAnalyst {
 	vector<string> existing_keywords_sorted;     // 出现过的关键字，按词频降序存储
 	vector<string> existing_allWords_sorted;     // 出现了的单词，按词频降序存储
 	vector<string> keyWords;                     // 存储所有C++保留关键字
-	vector<string> zhushi;
 
 public:
 	TextAnalyst();                                           // 构造函数：加载keywords
