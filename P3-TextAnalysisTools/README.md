@@ -80,4 +80,36 @@
    4. 排序两个功能用容器
 4. 功能1~3都会调用*ShowAllWord_byVECTOR*成员函数。区别在于： 
    1. 功能1打印所有单词，直接向该函数输入容器"用于功能1"即可。
-   2. 功能2查
+   2. 功能2查到单词并打印所有可能需要先使用（静态成员函数）myKMP遍历"词库1"并将答案用新的容器存起来，再将新容器输入到该函数。
+   3. 功能3打印所有找到的*保留关键字*，向该函数输入容器"用于功能3"即可。
+5. 成员函数*ShowAllWord_byVECTOR*打印单词后，还提供了打印单个单词的功能，这时使用了成员函数*displayTheWord*。
+6. 成员函数*displayTheWord*打印单个单词时使用了单词容器"词库2"。
+
+
+## 部分关键代码及其说明。
+**KMP**
+
+![KMP展示](kmp.png "KMP展示")
+
+**通过while实现robust输入的两个样例**
+
+![inputRobust展示](inputRobust1.png "inputRobust展示")
+
+![inputRobust展示](inputRobust2.png "inputRobust展示")
+
+**initContainer函数分析过程展示**
+由于没有想到更好的方法，我使用了两个布尔变量stopFlag1和stopFlag2来保证输入的完全性
+
+![initContainer函数展示](init1.png "initContainer函数展示")
+
+![trimLine2word函数展示](trimLine2word.png "trimLine2word函数展示")
+
+***ShowAllWord_byVECTOR*函数逻辑展示**
+重点是“提供后续服务”，使用了打印单个单词详细信息的函数
+
+![ShowAllWord_byVECTOR函数展示](showVector.png "ShowAllWord_byVECTOR函数展示")
+
+**手动输入功能函数展示**
+使用while实现了执行逻辑的连贯性
+
+![InputSearch函数展示](inputSearch.png "InputSearch函数展示")
