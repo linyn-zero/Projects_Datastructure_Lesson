@@ -2,9 +2,9 @@
 // Created by ling on 2022/10/10.
 //
 
-#include "TextAnalyst.h"
+#include "TextAnalyzer.h"
 
-void TextAnalyst::perform() {
+void TextAnalyzer::perform() {
 	try{ //
 		initContainer();
 		while(true){
@@ -17,7 +17,7 @@ void TextAnalyst::perform() {
 			cin >> command;
 			switch (command[0]) {
 				case '1':
-					ShowAllWord_byVECTOR(existing_allWords_sorted);
+					showAllWord();
 					break;
 				case '2':
 					InputSearch();
@@ -35,7 +35,7 @@ void TextAnalyst::perform() {
 		cout << e.what() ;
 	}
 }
-void TextAnalyst::initContainer() {
+void TextAnalyzer::initContainer() {
 	clearAllContainer(); // 清空容器
 
 	cout << "Input the address:" << std::endl;
@@ -104,15 +104,10 @@ void TextAnalyst::initContainer() {
 				  return wordsByDict[a] > wordsByDict[b];
 			  });
 }
-void TextAnalyst::showKeyword() const{
-	if(existing_keywords_sorted.empty()) { cout << "Found nothing, try again?" << std::endl; }
-	else {
-		ShowAllWord_byVECTOR(existing_keywords_sorted);
-		cout << "Please input the word you want to Search" << std::endl
-		     << "(0 for quit):";
-	} // 打印所有可能答案
+void TextAnalyzer::showAllWord() {
+	ShowAllWord_byVECTOR(existing_allWords_sorted);
 }
-void TextAnalyst::InputSearch() const {
+void TextAnalyzer::InputSearch() const {
 	cout << "Please input the word you want to Search" << std::endl
 	     << "(0 for quit):";
 	while(true){
@@ -138,13 +133,22 @@ void TextAnalyst::InputSearch() const {
 				          }
 				          return wordsByDict.find(a)->second > wordsByDict.find(b)->second;
 			          });
-			ShowAllWord_byVECTOR(found);
+			ShowAllWord_byVECTOR(found); // 打印所有可能答案
 			cout << "Please input the word you want to Search" << std::endl
 			     << "(0 for quit):";
-		} // 打印所有可能答案
+		}
 	}
 }
-void TextAnalyst::ShowAllWord_byVECTOR(const vector<string>& words) const {
+void TextAnalyzer::showKeyword() const{
+	if(existing_keywords_sorted.empty()) { cout << "Found nothing, try again?" << std::endl; }
+	else {
+		ShowAllWord_byVECTOR(existing_keywords_sorted);
+		cout << "Please input the word you want to Search" << std::endl
+		     << "(0 for quit):";
+	} // 打印所有可能答案
+}
+void TextAnalyzer::ShowAllWord_byVECTOR(const vector<string>& words) const {
+	// 开始打印
 	cout <<std::endl << "The Searching outcome:" << std::endl;
 	cout << std::setw(10) << std::right << "Word" << std::setw(30) << std::left << "List" << std::right << "Number" << std::endl;
 	int i = 0;
@@ -174,7 +178,7 @@ void TextAnalyst::ShowAllWord_byVECTOR(const vector<string>& words) const {
 		}
 	}
 }
-void TextAnalyst::displayTheWord(const string & theWord) const {
+void TextAnalyzer::displayTheWord(const string & theWord) const {
 	if (wordsByDict.find(theWord) == wordsByDict.end()) { // 再次检查有无指定单词
 		throw std::runtime_error{string{"no this word.when call displayTheWord"}};
 	}
@@ -186,7 +190,7 @@ void TextAnalyst::displayTheWord(const string & theWord) const {
 	}
 	cout << std::endl;
 }
-int TextAnalyst::myKMP(const string& str, const string& model)  {
+int TextAnalyzer::myKMP(const string& str, const string& model)  {
 	function<vector<int>(string)> getNextVal = [](const string& model){
 		vector<int> next(model.size(),0);
 		for(int i = 1, j = 0; i < model.size(); i++){
@@ -200,7 +204,6 @@ int TextAnalyst::myKMP(const string& str, const string& model)  {
 		}
 		return next;
 	};
-
 	vector<int> next(move(getNextVal(model)));
 	int j = 0;
 	for(int i = 0; i < str.size(); i++){
@@ -210,7 +213,7 @@ int TextAnalyst::myKMP(const string& str, const string& model)  {
 	}
 	return -1;
 }
-bool TextAnalyst::trimLine2Word(string &line, string &word) {
+bool TextAnalyzer::trimLine2Word(string &line, string &word) {
 	word.clear();
 	int index{};
 	while(index < line.size() && (std::isalpha(line[index]) || line[index] == '_' || std::isdigit(line[index]))) {
@@ -226,30 +229,32 @@ bool TextAnalyst::trimLine2Word(string &line, string &word) {
 	line = line.substr(index);
 	return !line.empty();
 }
-void TextAnalyst::clearAllContainer() {
+void TextAnalyzer::clearAllContainer() {
 	wordsByDict.clear();
 	wordsLine.clear();
 	existing_keywords_sorted.clear();
 	existing_allWords_sorted.clear();
 }
 
-TextAnalyst::TextAnalyst() : keyWords({"alignas","alignof"	,"asm"	,"auto"	,"bool",
-                                       "break"	,"case"	,"catch",	"char"	,"char16_t",
-                                       "char32_t"	,"class",	"const",	"const_cast",	"constexpr",
-                                       "continue",	"decltype",	"default"	,"delete",	"do",
-                                       "double",	"dynamic_cast"	,"else"	,"enum"	,"explicit",
-                                       "export"	,"extern",	"false",	"float",	"for",
-                                       "friend",	"goto"	,"if"	,"inline"	,"int",
-                                       "long",	"mutable"	,"namespace","new"	,"noexcept",
-                                       "nullptr"	,"operator"	,"private",	"protected"	,"public",
-                                       "register"	,"reinterpret_cast",	"return",	"short",	"signed",
-                                       "sizeof",	"static",	"static_assert"	,"static_cast"	,"struct",
-                                       "switch",	"template"	,"this"	,"thread_local",	"throw",
-                                       "true",	"try",	"typedef",	"typeid"	,"typename",
-                                       "union",	"unsigned",	"using",	"virtual"	,"void",
-                                       "volatile"	,"wchar_t",	"while"}){
+TextAnalyzer::TextAnalyzer() : keyWords({"alignas", "alignof"	, "asm"	, "auto"	, "bool",
+                                         "break"	, "case"	, "catch", "char"	, "char16_t",
+                                         "char32_t"	, "class", "const", "const_cast", "constexpr",
+                                         "continue", "decltype", "default"	, "delete", "do",
+                                         "double", "dynamic_cast"	, "else"	, "enum"	, "explicit",
+                                         "export"	, "extern", "false", "float", "for",
+                                         "friend", "goto"	, "if"	, "inline"	, "int",
+                                         "long", "mutable"	, "namespace", "new"	, "noexcept",
+                                         "nullptr"	, "operator"	, "private", "protected"	, "public",
+                                         "register"	, "reinterpret_cast", "return", "short", "signed",
+                                         "sizeof", "static", "static_assert"	, "static_cast"	, "struct",
+                                         "switch", "template"	, "this"	, "thread_local", "throw",
+                                         "true", "try", "typedef", "typeid"	, "typename",
+                                         "union", "unsigned", "using", "virtual"	, "void",
+                                         "volatile"	, "wchar_t", "while"}){
 	keyWords.shrink_to_fit();
 }
+
+
 
 
 

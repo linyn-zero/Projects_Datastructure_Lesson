@@ -1,7 +1,6 @@
-#include <iostream>
-#include "TextAnalyst.h"
+#include "TextAnalyzer.h"
 int main() {
-	TextAnalyst textAnalyst;
+	TextAnalyzer textAnalyst;
 	while(true){
 		textAnalyst.perform();
 	}

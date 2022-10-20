@@ -1,8 +1,8 @@
 
 /// Created by ling on 2022/10/10.
 
-#ifndef TEXTANALYSISTOOLS_TEXTANALYST_H
-#define TEXTANALYSISTOOLS_TEXTANALYST_H
+#ifndef TEXTANALYSISTOOLS_TEXTANALYZER_H
+#define TEXTANALYSISTOOLS_TEXTANALYZER_H
 #include <string>
 #include <vector>
 #include <map>
@@ -38,7 +38,7 @@ using std::remove_if;
  * 方法2：手动输入想要查询的单词（使用KMP以提供非精准查找方案）。将显示所有的可能结果。询问查询哪个单词（输入序号）。提供指定单词的出现行序与在各行的个数
  * 方法3：显示所有找到的关键字
 */
-class TextAnalyst {
+class TextAnalyzer {
 	// 信息载体容器们
 	map<string, int> wordsByDict;                // 词库1。记录所有出现过的单词，key是单词，value是出现次数
 	map<string, map<int,int>> wordsLine;         // 词库2。单词与其出现的行序号与次数
@@ -46,9 +46,10 @@ class TextAnalyst {
 	vector<string> existing_keywords_sorted;     // 用于功能3。出现过的关键字，按词频降序存储。
 	vector<string> keyWords;                     // 存储所有C++保留关键字。在调用构造函数时加载。
 public:
-	TextAnalyst();                                           // 构造函数：加载keywords
+	TextAnalyzer();                                           // 构造函数：加载keywords
 	void perform();                                          // 主函数入口
 	void initContainer();                                    // 初始化信息载体容器
+	void showAllWord();                                      // 功能1：展示出现过的所有单词及其出现次数（按次数排序）
 	void InputSearch() const;                                // 功能2：输入想要查询的内容
 	void showKeyword() const;                                // 功能3：展示保留字及其出现次数（按次数排序）
 	static bool trimLine2Word(string &line, string &word);   // 初始化信息用接口：将一行文本修减为一个单词，同时文本减去相应部分
@@ -57,7 +58,7 @@ public:
 	static int myKMP(const string&, const string&) ;         // 用于功能2。一个KMP算法。
 	void clearAllContainer();                                // 用于初始化信息载体容器。清空所有容器。
 };
-#endif //TEXTANALYSISTOOLS_TEXTANALYST_H
+#endif //TEXTANALYSISTOOLS_TEXTANALYZER_H
 /*
  * bug日志：
  * 1、map无法以[]读取value: const函数不行

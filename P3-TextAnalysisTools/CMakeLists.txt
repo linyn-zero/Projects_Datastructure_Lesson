@@ -3,4 +3,4 @@ project(TextAnalysisTools)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(TextAnalysisTools main.cpp TextAnalyst.cpp TextAnalyst.h)
+add_executable(TextAnalysisTools main.cpp TextAnalyzer.cpp TextAnalyzer.h)
