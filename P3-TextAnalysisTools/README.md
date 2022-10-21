@@ -31,7 +31,7 @@
 ![](func2_detail1.png "支持识别变量名")
 5. 本程序对所有输入都进行了鲁棒性优化，如图。
 ![输入鲁棒性展示](robust1.png "输入鲁棒性展示")
-<img src=robust1.png width=10% />
+<img src=robust1.png width=50% "输入鲁棒性展示"/>
 6. 更多细节请移步我的头文件[TextAnalyzer.h](TextAnalyzer.h)下方的日志（日志写的不是很好，但也算开始培养习惯）
 
 
