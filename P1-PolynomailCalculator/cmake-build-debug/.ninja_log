@@ -1,0 +1,8 @@
+# ninja log v5
+7	1066	6880557811886424	CMakeFiles/Polynomial_Calculator2_1.dir/main.cpp.obj	156872b98e38105c
+1	1495	6880557816160040	CMakeFiles/Polynomial_Calculator2_1.dir/operations.cpp.obj	2972b14a4ff602c4
+1495	1973	6880557820943891	Polynomial_Calculator2_1.exe	442beb757362c598
+3	1207	6880558069807638	CMakeFiles/Polynomial_Calculator2_1.dir/operations.cpp.obj	2972b14a4ff602c4
+1208	1389	6880558071588264	Polynomial_Calculator2_1.exe	442beb757362c598
+3	706	6880558841624739	CMakeFiles/Polynomial_Calculator2_1.dir/main.cpp.obj	156872b98e38105c
+707	918	6880558843709324	Polynomial_Calculator2_1.exe	442beb757362c598
