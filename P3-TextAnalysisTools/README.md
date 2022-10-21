@@ -1,4 +1,6 @@
 # P3 文本分析工具-实验报告
+我贴了很多图片上去是因为我忘了markdown可以放代码段，下次一定下次一定……
+
 ## 目录
 - [P3 文本分析工具-实验报告](#p3-文本分析工具-实验报告)
   - [目录](#目录)
@@ -30,35 +32,45 @@
 4. 本程序排除了一些易错细节，如英语所有格"'s"。以及将一些由下划线连接的或数字连接起来的变量名视为一个整体，如图。
 ![](func2_detail1.png "支持识别变量名")
 5. 本程序对所有输入都进行了鲁棒性优化，如图。
-![输入鲁棒性展示](robust1.png "输入鲁棒性展示")
+<img src=robust1.png width=50% atl="鲁棒性优化展示"/>
+（上面的这张图片是我的图片功能lab）
 6. 更多细节请移步我的头文件[TextAnalyzer.h](TextAnalyzer.h)下方的日志（日志写的不是很好，但也算开始培养习惯）
 
 
 ## 程序运行截图展示
 
 **功能1 显示所有单词**
-![功能1 显示所有单词展示](execution1.png "功能1 显示所有单词")
+
+![功能1 显示所有单词展示](execution1.png 10% "功能1 显示所有单词")
 
 **功能2 手动搜索单词**
+
 ![功能2 手动搜索单词展示](execution2.png "功能2 手动搜索单词")
 
 **功能3 显示所有C++保留关键字**
+
 ![功能3 显示所有C++保留关键字展示](execution3.png "功能3 显示所有C++保留关键字")
 
 **功能0 加载新的文档（这次是.cpp）**
+
 ![功能0 加载新的文档展示（这次是.cpp）](executionCode.png "功能0 加载新的文档（这次是.cpp）")
 
 **加载大文件时对单个单词的展示效果**
+
 ![单个单词的展示](executionCode2.png "单个单词的展示")
 
 **加载普通的英文文本**
+
 ![英文文本展示](executionText.png "英文文本展示")
 
 
 ## 程序运行方式简要说明。
 **头文件**
+
 ![头文件展示](headFile.png "头文件展示")
+
 **main函数**
+
 ![main函数展示](main.png "main函数展示")
 
 #### 程序执行逻辑
@@ -79,21 +91,28 @@
 
 ## 部分关键代码及其说明。
 **KMP**
+
 ![KMP展示](kmp.png "KMP展示")
 
 **通过while实现robust输入的两个样例**
+
 ![inputRobust展示](inputRobust1.png "inputRobust展示")
+
 ![inputRobust展示](inputRobust2.png "inputRobust展示")
 
 **initContainer函数分析过程展示**
 由于没有想到更好的方法，我使用了两个布尔变量stopFlag1和stopFlag2来保证输入的完全性
+
 ![initContainer函数展示](init1.png "initContainer函数展示")
+
 ![trimLine2word函数展示](trimLine2word.png "trimLine2word函数展示")
 
 ***ShowAllWord_byVECTOR*函数逻辑展示**
 重点是“提供后续服务”，使用了打印单个单词详细信息的函数
+
 ![ShowAllWord_byVECTOR函数展示](showVector.png "ShowAllWord_byVECTOR函数展示")
 
 **手动输入功能函数展示**
 使用while实现了执行逻辑的连贯性
+
 ![InputSearch函数展示](inputSearch.png "InputSearch函数展示")
