@@ -55,8 +55,8 @@ build CMakeFiles/TextAnalysisTools.dir/main.cpp.obj: CXX_COMPILER__TextAnalysisT
   OBJECT_DIR = CMakeFiles\TextAnalysisTools.dir
   OBJECT_FILE_DIR = CMakeFiles\TextAnalysisTools.dir
 
-build CMakeFiles/TextAnalysisTools.dir/TextAnalyst.cpp.obj: CXX_COMPILER__TextAnalysisTools_Debug D$:/github/Projects_Datastructure_Lesson/P3-TextAnalysisTools/TextAnalyst.cpp || cmake_object_order_depends_target_TextAnalysisTools
-  DEP_FILE = CMakeFiles\TextAnalysisTools.dir\TextAnalyst.cpp.obj.d
+build CMakeFiles/TextAnalysisTools.dir/TextAnalyzer.cpp.obj: CXX_COMPILER__TextAnalysisTools_Debug D$:/github/Projects_Datastructure_Lesson/P3-TextAnalysisTools/TextAnalyzer.cpp || cmake_object_order_depends_target_TextAnalysisTools
+  DEP_FILE = CMakeFiles\TextAnalysisTools.dir\TextAnalyzer.cpp.obj.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles\TextAnalysisTools.dir
   OBJECT_FILE_DIR = CMakeFiles\TextAnalysisTools.dir
@@ -69,7 +69,7 @@ build CMakeFiles/TextAnalysisTools.dir/TextAnalyst.cpp.obj: CXX_COMPILER__TextAn
 #############################################
 # Link the executable TextAnalysisTools.exe
 
-build TextAnalysisTools.exe: CXX_EXECUTABLE_LINKER__TextAnalysisTools_Debug CMakeFiles/TextAnalysisTools.dir/main.cpp.obj CMakeFiles/TextAnalysisTools.dir/TextAnalyst.cpp.obj
+build TextAnalysisTools.exe: CXX_EXECUTABLE_LINKER__TextAnalysisTools_Debug CMakeFiles/TextAnalysisTools.dir/main.cpp.obj CMakeFiles/TextAnalysisTools.dir/TextAnalyzer.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\TextAnalysisTools.dir
