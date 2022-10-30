@@ -1,6 +1,10 @@
 #include <iostream>
-
+#include "ExpressionManager.h"
 int main() {
-	std::cout << "Hello, World!" << std::endl;
+	ExpressionManager manager;
+	manager.welcome();
+	while(true){
+		manager.perform();
+	}
 	return 0;
 }
