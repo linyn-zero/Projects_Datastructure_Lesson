@@ -61,12 +61,6 @@ build CMakeFiles/P4_ArithmeticExpressionAndBinaryTree.dir/ExpressionManager.cpp.
   OBJECT_DIR = CMakeFiles\P4_ArithmeticExpressionAndBinaryTree.dir
   OBJECT_FILE_DIR = CMakeFiles\P4_ArithmeticExpressionAndBinaryTree.dir
 
-build CMakeFiles/P4_ArithmeticExpressionAndBinaryTree.dir/BinaryTree.cpp.obj: CXX_COMPILER__P4_ArithmeticExpressionAndBinaryTree_Debug D$:/github/Projects_Datastructure_Lesson/P4-ArithmeticExpressionAndBinaryTree/BinaryTree.cpp || cmake_object_order_depends_target_P4_ArithmeticExpressionAndBinaryTree
-  DEP_FILE = CMakeFiles\P4_ArithmeticExpressionAndBinaryTree.dir\BinaryTree.cpp.obj.d
-  FLAGS = -g -std=gnu++17
-  OBJECT_DIR = CMakeFiles\P4_ArithmeticExpressionAndBinaryTree.dir
-  OBJECT_FILE_DIR = CMakeFiles\P4_ArithmeticExpressionAndBinaryTree.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target P4_ArithmeticExpressionAndBinaryTree
@@ -75,7 +69,7 @@ build CMakeFiles/P4_ArithmeticExpressionAndBinaryTree.dir/BinaryTree.cpp.obj: CX
 #############################################
 # Link the executable P4_ArithmeticExpressionAndBinaryTree.exe
 
-build P4_ArithmeticExpressionAndBinaryTree.exe: CXX_EXECUTABLE_LINKER__P4_ArithmeticExpressionAndBinaryTree_Debug CMakeFiles/P4_ArithmeticExpressionAndBinaryTree.dir/main.cpp.obj CMakeFiles/P4_ArithmeticExpressionAndBinaryTree.dir/ExpressionManager.cpp.obj CMakeFiles/P4_ArithmeticExpressionAndBinaryTree.dir/BinaryTree.cpp.obj
+build P4_ArithmeticExpressionAndBinaryTree.exe: CXX_EXECUTABLE_LINKER__P4_ArithmeticExpressionAndBinaryTree_Debug CMakeFiles/P4_ArithmeticExpressionAndBinaryTree.dir/main.cpp.obj CMakeFiles/P4_ArithmeticExpressionAndBinaryTree.dir/ExpressionManager.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\P4_ArithmeticExpressionAndBinaryTree.dir
