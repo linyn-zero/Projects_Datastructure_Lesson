@@ -1,0 +1,16 @@
+# ninja log v5
+1	311	6888212480635297	build.ninja	27bd454252235f47
+8	105	6888212449961112	CMakeFiles/P4_ArithmeticExpressionAndBinaryTree.dir/ExpressionManager.cpp.obj	82f0f9809f48489f
+12	660	6888212455502504	CMakeFiles/P4_ArithmeticExpressionAndBinaryTree.dir/main.cpp.obj	d9d8ec6aa8409d1a
+17	650	6889178174909759	CMakeFiles/P4_ArithmeticExpressionAndBinaryTree.dir/BinaryTree.cpp.obj	ef01df8450dcb498
+6	646	6889778514060052	CMakeFiles/P4_ArithmeticExpressionAndBinaryTree.dir/main.cpp.obj	d9d8ec6aa8409d1a
+3	1070	6889778518281174	CMakeFiles/P4_ArithmeticExpressionAndBinaryTree.dir/ExpressionManager.cpp.obj	82f0f9809f48489f
+1071	1235	6889778519848457	P4_ArithmeticExpressionAndBinaryTree.exe	c7a90fc88533cb38
+3	1572	6889813838595283	CMakeFiles/P4_ArithmeticExpressionAndBinaryTree.dir/ExpressionManager.cpp.obj	82f0f9809f48489f
+1573	1807	6889813840939443	P4_ArithmeticExpressionAndBinaryTree.exe	c7a90fc88533cb38
+3	1554	6889815556469813	CMakeFiles/P4_ArithmeticExpressionAndBinaryTree.dir/ExpressionManager.cpp.obj	82f0f9809f48489f
+1555	1798	6889815558859585	P4_ArithmeticExpressionAndBinaryTree.exe	c7a90fc88533cb38
+3	1435	6889816002403041	CMakeFiles/P4_ArithmeticExpressionAndBinaryTree.dir/ExpressionManager.cpp.obj	82f0f9809f48489f
+1435	1672	6889816004746909	P4_ArithmeticExpressionAndBinaryTree.exe	c7a90fc88533cb38
+2	1356	6889816202961746	CMakeFiles/P4_ArithmeticExpressionAndBinaryTree.dir/ExpressionManager.cpp.obj	82f0f9809f48489f
+1356	1535	6889816204836851	P4_ArithmeticExpressionAndBinaryTree.exe	c7a90fc88533cb38
