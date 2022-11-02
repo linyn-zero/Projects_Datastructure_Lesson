@@ -1,4 +1,3 @@
-#include <iostream>
 #include "ExpressionManager.h"
 int main() {
 	ExpressionManager manager;

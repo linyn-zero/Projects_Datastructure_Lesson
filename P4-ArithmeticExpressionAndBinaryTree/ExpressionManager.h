@@ -102,7 +102,7 @@ public:
 	  static string wordsMerge(vector<string>& ,int);         // build.给定vector<string>,把其中需要build的exp部分整合到一起
 	  static void buildExceptionDeleting(stack<BinaryTree>&); // build.给定一棵二叉树的头结点，把树拆了。用于处理build中的异常。需要把树拆了，否则内存浪费
 	  static void treeDeleting(BinaryTree);                   // build&析构.给定一棵二叉树的头结点，把树拆了。
-	  int calculate_consts(BinaryTree);                       // merge_const.给定一棵二叉树的头结点，将一颗树能做的常数运算完成
+	  void calculate_consts(BinaryTree);                       // merge_const.给定一棵二叉树的头结点，将一颗树能做的常数运算完成
 };
 
 

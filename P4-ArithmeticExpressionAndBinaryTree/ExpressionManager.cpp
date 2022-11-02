@@ -28,16 +28,16 @@ ExpressionManager::BinaryTree ExpressionManager::getTree(const string &name) con
 	return it == trees.end() ? nullptr : it->second;
 }
 void ExpressionManager::welcome() {
-	cout << endl << endl << endl << "-Expression Calculator-" << endl
-	     << "        -made by linyn" << endl
-		 << "How to use:" << endl << endl
+	cout << "-Expression Calculator-" << endl
+	     << "              -made by linyn" << endl << endl
+		 << "How to use:" << endl
 		 << ">>> build [name] [expression]       // build a expression with name" << endl
 		 << ">>> a = 1                           // assign a variable, no expressions applied" << endl
 		 << ">>> calt  exp                       // show it's value" << endl
 		 << ">>> print exp                       // show v's expression" << endl
 		 << ">>> check exp                       // show v's expression as a tree" << endl
 		 << ">>> merge [new_name] exp1 op exp2   // merge two expresions by a operator"<< endl
-		 << ">>> mergeconst exp                  // merge the const-operation in the expression"<< endl;
+		 << ">>> mergeconst exp                  // merge the const-operation in the expression"<< endl << endl;
 }
 void ExpressionManager::perform() {
 	try{
@@ -384,7 +384,7 @@ void ExpressionManager::mergeconst(vector<string> words) {
 	calculate_consts(tree);
 }
 // root始终是运算符,因此它也总有左右子树
-int ExpressionManager::calculate_consts(ExpressionManager::BinaryTree root) {
+void ExpressionManager::calculate_consts(ExpressionManager::BinaryTree root) {
 	if(isOps(root->left->val)){
 		calculate_consts(root->left);
 	}

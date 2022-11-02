@@ -1,3 +1,4 @@
 D:/github/Projects_Datastructure_Lesson/P4-ArithmeticExpressionAndBinaryTree/cmake-build-debug/CMakeFiles/P4_ArithmeticExpressionAndBinaryTree.dir
 D:/github/Projects_Datastructure_Lesson/P4-ArithmeticExpressionAndBinaryTree/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/github/Projects_Datastructure_Lesson/P4-ArithmeticExpressionAndBinaryTree/cmake-build-debug/CMakeFiles/main.dir
 D:/github/Projects_Datastructure_Lesson/P4-ArithmeticExpressionAndBinaryTree/cmake-build-debug/CMakeFiles/rebuild_cache.dir
