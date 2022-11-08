@@ -48,18 +48,18 @@ using std::queue;
 	void mergeconst(vector<string> words);                  // 将给定二叉树中的能运算的常数运算完成
 	void assign(vector<string>& words);                     // 给变量赋值,例: a=1
 
-	  BinaryTree buildTree(const string& );                   // 給定前綴表達式string,建樹,返回樹的頭節點
-	  void printByMidOrder(BinaryTree) const;                 // print.给定二叉树头结点，以中序输出表达式
-	  static int getDepth(BinaryTree) ;                       // check.给定二叉树，返回层数。
-	  static void printTreelike(BinaryTree, int);             // check.给定二叉树与其层数，图形化打印二叉树(使用的是线性表满二叉树，在数据较大时对使用大量内存，更正的话会使用两个子树下标数组代替）
-	  int calculate_tree(BinaryTree);                         // calt.给定一棵二叉树的头结点，计算一棵二叉树的值
-	  static int calculate_one(int , int , char op);          // calt.给定两个运算数与一个二元运算符，执行单次计算，返回结果
-	  static bool isOps(const char&);                         // 判断是否为程序支持的运算符类型
-	  static vector<string> initInput(const string&);         // perform.给定string，拆成vector<string> 以空格,=号作为截断.
-	  static string wordsMerge(vector<string>& ,int);         // build.给定vector<string>,把其中需要build的exp部分整合到一起
-	  static void buildExceptionDeleting(stack<BinaryTree>&); // build.给定一棵二叉树的头结点，把树拆了。用于处理build中的异常。需要把树拆了，否则内存浪费
-	  static void treeDeleting(BinaryTree);                   // build&析构.给定一棵二叉树的头结点，把树拆了。
-	  int calculate_consts(BinaryTree);                       // merge_const.给定一棵二叉树的头结点，将一颗树能做的常数运算完成
+	BinaryTree buildTree(const string& );                   // 給定前綴表達式string,建樹,返回樹的頭節點
+	void printByMidOrder(BinaryTree) const;                 // print.给定二叉树头结点，以中序输出表达式
+	static int getDepth(BinaryTree) ;                       // check.给定二叉树，返回层数。
+	static void printTreelike(BinaryTree, int);             // check.给定二叉树与其层数，图形化打印二叉树(使用的是线性表满二叉树，在数据较大时对使用大量内存，更正的话会使用两个子树下标数组代替）
+	int calculate_tree(BinaryTree);                         // calt.给定一棵二叉树的头结点，计算一棵二叉树的值
+	static int calculate_one(int , int , char op);          // calt.给定两个运算数与一个二元运算符，执行单次计算，返回结果
+	static bool isOps(const char&);                         // 判断是否为程序支持的运算符类型
+	static vector<string> initInput(const string&);         // perform.给定string，拆成vector<string> 以空格,=号作为截断.
+	static string wordsMerge(vector<string>& ,int);         // build.给定vector<string>,把其中需要build的exp部分整合到一起
+	static void buildExceptionDeleting(stack<BinaryTree>&); // build.给定一棵二叉树的头结点，把树拆了。用于处理build中的异常。需要把树拆了，否则内存浪费
+	static void treeDeleting(BinaryTree);                   // build&析构.给定一棵二叉树的头结点，把树拆了。
+	int calculate_consts(BinaryTree);                       // merge_const.给定一棵二叉树的头结点，将一颗树能做的常数运算完成
  */
 
 
@@ -82,7 +82,7 @@ public:
 	BinaryTree getTree(const string &name) const;           // 取出树.无则返回nullptr
 
 	static void welcome();                                  // 欢迎语
-	void perform();                                         // 根据用户的输入来确定执行什么操作
+	bool perform();                                         // 根据用户的输入来确定执行什么操作
 	void build(vector<string>& words);                      // 建立前缀表达式二叉树，过程中不求值
 	void print(vector<string>& words) const;                // 打印给定二叉树的中序表达式
 	void check(vector<string>& words) const;                // 打印给定二叉树的图像
@@ -91,18 +91,18 @@ public:
 	void mergeconst(vector<string> words);                  // 将给定二叉树中的能运算的常数运算完成
 	void assign(vector<string>& words);                     // 给变量赋值,例: a=1
 
-	  BinaryTree buildTree(const string& );                   // 給定前綴表達式string,建樹,返回樹的頭節點
-	  void printByMidOrder(BinaryTree) const;                 // print.给定二叉树头结点，以中序输出表达式
-	  static int getDepth(BinaryTree) ;                       // check.给定二叉树，返回层数。
-	  static void printTreelike(BinaryTree, int);             // check.给定二叉树与其层数，图形化打印二叉树(使用的是线性表满二叉树，在数据较大时对使用大量内存，更正的话会使用两个子树下标数组代替）
-	  int calculate_tree(BinaryTree);                         // calt.给定一棵二叉树的头结点，计算一棵二叉树的值
-	  static int calculate_one(int , int , char op);          // calt.给定两个运算数与一个二元运算符，执行单次计算，返回结果
-	  static bool isOps(const char&);                         // 判断是否为程序支持的运算符类型
-	  static vector<string> initInput(const string&);         // perform.给定string，拆成vector<string> 以空格,=号作为截断.
-	  static string wordsMerge(vector<string>& ,int);         // build.给定vector<string>,把其中需要build的exp部分整合到一起
-	  static void buildExceptionDeleting(stack<BinaryTree>&); // build.给定一棵二叉树的头结点，把树拆了。用于处理build中的异常。需要把树拆了，否则内存浪费
-	  static void treeDeleting(BinaryTree);                   // build&析构.给定一棵二叉树的头结点，把树拆了。
-	  void calculate_consts(BinaryTree);                       // merge_const.给定一棵二叉树的头结点，将一颗树能做的常数运算完成
+	BinaryTree buildTree(const string& );                   // 給定前綴表達式string,建樹,返回樹的頭節點
+	void printByMidOrder(BinaryTree) const;                 // print.给定二叉树头结点，以中序输出表达式
+	static int getDepth(BinaryTree) ;                       // check.给定二叉树，返回层数。
+	static void printTreelike(BinaryTree, int);             // check.给定二叉树与其层数，图形化打印二叉树(使用的是线性表满二叉树，在数据较大时对使用大量内存，更正的话会使用两个子树下标数组代替）
+	int calculate_tree(BinaryTree);                         // calt.给定一棵二叉树的头结点，计算一棵二叉树的值
+	static int calculate_one(int , int , char op);          // calt.给定两个运算数与一个二元运算符，执行单次计算，返回结果
+	static bool isOps(const char&);                         // 判断是否为程序支持的运算符类型
+	static vector<string> initInput(const string&);         // perform.给定string，拆成vector<string> 以空格,=号作为截断.
+	static string wordsMerge(vector<string>& ,int);         // build.给定vector<string>,把其中需要build的exp部分整合到一起
+	static void buildExceptionDeleting(stack<BinaryTree>&); // build.给定一棵二叉树的头结点，把树拆了。用于处理build中的异常。需要把树拆了，否则内存浪费
+	static void treeDeleting(BinaryTree);                   // build&析构.给定一棵二叉树的头结点，把树拆了。
+	void calculate_consts(BinaryTree);                       // merge_const.给定一棵二叉树的头结点，将一颗树能做的常数运算完成
 };
 
 

@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: P4_ArithmeticExpressionAndBinaryTree
+# Project: data_structure_practise
 # Configurations: Debug
 # =============================================================================
 
@@ -39,52 +39,52 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = D$:/github/Projects_Datastructure_Lesson/P4-ArithmeticExpressionAndBinaryTree/cmake-build-debug/
+cmake_ninja_workdir = D$:/github/Projects_Datastructure_Lesson/data_structure_practise/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target P4_ArithmeticExpressionAndBinaryTree
+# Object build statements for EXECUTABLE target data_structure_practise
 
 
 #############################################
-# Order-only phony target for P4_ArithmeticExpressionAndBinaryTree
+# Order-only phony target for data_structure_practise
 
-build cmake_object_order_depends_target_P4_ArithmeticExpressionAndBinaryTree: phony || CMakeFiles/P4_ArithmeticExpressionAndBinaryTree.dir
+build cmake_object_order_depends_target_data_structure_practise: phony || CMakeFiles/data_structure_practise.dir
 
-build CMakeFiles/P4_ArithmeticExpressionAndBinaryTree.dir/main.cpp.obj: CXX_COMPILER__P4_ArithmeticExpressionAndBinaryTree_Debug D$:/github/Projects_Datastructure_Lesson/P4-ArithmeticExpressionAndBinaryTree/main.cpp || cmake_object_order_depends_target_P4_ArithmeticExpressionAndBinaryTree
-  DEP_FILE = CMakeFiles\P4_ArithmeticExpressionAndBinaryTree.dir\main.cpp.obj.d
+build CMakeFiles/data_structure_practise.dir/main.cpp.obj: CXX_COMPILER__data_structure_practise_Debug D$:/github/Projects_Datastructure_Lesson/data_structure_practise/main.cpp || cmake_object_order_depends_target_data_structure_practise
+  DEP_FILE = CMakeFiles\data_structure_practise.dir\main.cpp.obj.d
   FLAGS = -g -std=gnu++17
-  OBJECT_DIR = CMakeFiles\P4_ArithmeticExpressionAndBinaryTree.dir
-  OBJECT_FILE_DIR = CMakeFiles\P4_ArithmeticExpressionAndBinaryTree.dir
+  OBJECT_DIR = CMakeFiles\data_structure_practise.dir
+  OBJECT_FILE_DIR = CMakeFiles\data_structure_practise.dir
 
-build CMakeFiles/P4_ArithmeticExpressionAndBinaryTree.dir/ExpressionManager.cpp.obj: CXX_COMPILER__P4_ArithmeticExpressionAndBinaryTree_Debug D$:/github/Projects_Datastructure_Lesson/P4-ArithmeticExpressionAndBinaryTree/ExpressionManager.cpp || cmake_object_order_depends_target_P4_ArithmeticExpressionAndBinaryTree
-  DEP_FILE = CMakeFiles\P4_ArithmeticExpressionAndBinaryTree.dir\ExpressionManager.cpp.obj.d
+build CMakeFiles/data_structure_practise.dir/BinarySearchTree.cpp.obj: CXX_COMPILER__data_structure_practise_Debug D$:/github/Projects_Datastructure_Lesson/data_structure_practise/BinarySearchTree.cpp || cmake_object_order_depends_target_data_structure_practise
+  DEP_FILE = CMakeFiles\data_structure_practise.dir\BinarySearchTree.cpp.obj.d
   FLAGS = -g -std=gnu++17
-  OBJECT_DIR = CMakeFiles\P4_ArithmeticExpressionAndBinaryTree.dir
-  OBJECT_FILE_DIR = CMakeFiles\P4_ArithmeticExpressionAndBinaryTree.dir
+  OBJECT_DIR = CMakeFiles\data_structure_practise.dir
+  OBJECT_FILE_DIR = CMakeFiles\data_structure_practise.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target P4_ArithmeticExpressionAndBinaryTree
+# Link build statements for EXECUTABLE target data_structure_practise
 
 
 #############################################
-# Link the executable P4_ArithmeticExpressionAndBinaryTree.exe
+# Link the executable data_structure_practise.exe
 
-build P4_ArithmeticExpressionAndBinaryTree.exe: CXX_EXECUTABLE_LINKER__P4_ArithmeticExpressionAndBinaryTree_Debug CMakeFiles/P4_ArithmeticExpressionAndBinaryTree.dir/main.cpp.obj CMakeFiles/P4_ArithmeticExpressionAndBinaryTree.dir/ExpressionManager.cpp.obj
+build data_structure_practise.exe: CXX_EXECUTABLE_LINKER__data_structure_practise_Debug CMakeFiles/data_structure_practise.dir/main.cpp.obj CMakeFiles/data_structure_practise.dir/BinarySearchTree.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\P4_ArithmeticExpressionAndBinaryTree.dir
+  OBJECT_DIR = CMakeFiles\data_structure_practise.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = P4_ArithmeticExpressionAndBinaryTree.exe
-  TARGET_IMPLIB = libP4_ArithmeticExpressionAndBinaryTree.dll.a
-  TARGET_PDB = P4_ArithmeticExpressionAndBinaryTree.exe.dbg
+  TARGET_FILE = data_structure_practise.exe
+  TARGET_IMPLIB = libdata_structure_practise.dll.a
+  TARGET_PDB = data_structure_practise.exe.dbg
 
 
 #############################################
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\github\Projects_Datastructure_Lesson\P4-ArithmeticExpressionAndBinaryTree\cmake-build-debug && "D:\APPs\CLion 2021.3.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = cmd.exe /C "cd /D D:\github\Projects_Datastructure_Lesson\data_structure_practise\cmake-build-debug && "D:\APPs\CLion 2021.3.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -95,7 +95,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\github\Projects_Datastructure_Lesson\P4-ArithmeticExpressionAndBinaryTree\cmake-build-debug && "D:\APPs\CLion 2021.3.2\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SD:\github\Projects_Datastructure_Lesson\P4-ArithmeticExpressionAndBinaryTree -BD:\github\Projects_Datastructure_Lesson\P4-ArithmeticExpressionAndBinaryTree\cmake-build-debug"
+  COMMAND = cmd.exe /C "cd /D D:\github\Projects_Datastructure_Lesson\data_structure_practise\cmake-build-debug && "D:\APPs\CLion 2021.3.2\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SD:\github\Projects_Datastructure_Lesson\data_structure_practise -BD:\github\Projects_Datastructure_Lesson\data_structure_practise\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -105,7 +105,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build P4_ArithmeticExpressionAndBinaryTree: phony P4_ArithmeticExpressionAndBinaryTree.exe
+build data_structure_practise: phony data_structure_practise.exe
 
 # =============================================================================
 # Folder targets.
@@ -113,9 +113,9 @@ build P4_ArithmeticExpressionAndBinaryTree: phony P4_ArithmeticExpressionAndBina
 # =============================================================================
 
 #############################################
-# Folder: D:/github/Projects_Datastructure_Lesson/P4-ArithmeticExpressionAndBinaryTree/cmake-build-debug
+# Folder: D:/github/Projects_Datastructure_Lesson/data_structure_practise/cmake-build-debug
 
-build all: phony P4_ArithmeticExpressionAndBinaryTree.exe
+build all: phony data_structure_practise.exe
 
 # =============================================================================
 # Built-in targets

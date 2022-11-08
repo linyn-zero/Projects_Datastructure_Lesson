@@ -5,12 +5,7 @@
 #ifndef DATA_STRUCTURE_PRACTISE_STDLIBS_H
 #define DATA_STRUCTURE_PRACTISE_STDLIBS_H
 
-
-
-class stdlibs {
-
-};
-
-
+#include <algorithm>
+#include <iostream>
 
 #endif //DATA_STRUCTURE_PRACTISE_STDLIBS_H

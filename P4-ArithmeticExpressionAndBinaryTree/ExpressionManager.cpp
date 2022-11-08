@@ -28,24 +28,26 @@ ExpressionManager::BinaryTree ExpressionManager::getTree(const string &name) con
 	return it == trees.end() ? nullptr : it->second;
 }
 void ExpressionManager::welcome() {
-	cout << "-Expression Calculator-" << endl
+	cout << endl 
+		 << "-Expression Calculator-" << endl
 	     << "              -made by linyn" << endl << endl
 		 << "How to use:" << endl
-		 << ">>> build [name] [expression]       // build a expression with name" << endl
-		 << ">>> a = 1                           // assign a variable, no expressions applied" << endl
-		 << ">>> calt  exp                       // show it's value" << endl
-		 << ">>> print exp                       // show v's expression" << endl
-		 << ">>> check exp                       // show v's expression as a tree" << endl
-		 << ">>> merge [new_name] exp1 op exp2   // merge two expresions by a operator"<< endl
-		 << ">>> mergeconst exp                  // merge the const-operation in the expression"<< endl << endl;
+		 << ">>> build [name] [expression]                      // build a expression with name" << endl
+		 << ">>> a = 1                                          // assign a variable, no expressions applied" << endl
+		 << ">>> calt  [name]                                   // show it's value" << endl
+		 << ">>> print [name]                                   // show exp's expression" << endl
+		 << ">>> check [name]                                   // show exp's expression as a tree" << endl
+		 << ">>> merge [new_name] [exp1_name] op [exp2_name]    // merge two expresions by a operator"<< endl
+		 << ">>> mergeconst [name]                              // merge the const-operation in the expression"<< endl 
+		 << ">>> quit                                           // quit this program" << endl << endl;
 }
-void ExpressionManager::perform() {
+bool ExpressionManager::perform() {
 	try{
         cout << std::setw(4) <<  ">>> ";
 		string input;
 		std::getline(cin, input,'\n');
 		vector<string> words = initInput(input); // 以空格和'='为界将input内的东西保存为words
-		if(words.empty()){return ;}
+		if(words.empty()){return true;}
 		if(words[0] == "build") {
 			build(words);
 		}
@@ -64,6 +66,9 @@ void ExpressionManager::perform() {
 		else if(words[0] == "mergeconst"){
 			mergeconst(words);
 		}
+		else if(words[0] == "quit"){
+			return false;
+		}
 		else{
 			assign(words);
 		}
@@ -71,6 +76,7 @@ void ExpressionManager::perform() {
 	catch (exception& e) {
 		cout << e.what() << endl;
 	}
+	return true;
 }
 vector<string> ExpressionManager::initInput(const string &input) {
 	vector<string> words;
@@ -95,7 +101,8 @@ void ExpressionManager::build(vector<string>& words) {
 		throw std::runtime_error{string{"Error: In function 'build', the first char of expression of input isn't operator."}};
 	}
 	BinaryTree tree = buildTree(exp); // 建樹
-	setTree(name, tree);             // 把树存起来
+	setTree(name, tree);              // 把树存起来
+	calculate_tree(tree);        // 检查树的可计算性
 }
 void ExpressionManager::print(vector<string>& words) const{
 	if(words.size() != 2){throw std::runtime_error{string{"Error: Function 'print' except only one parameter."}};}
@@ -255,6 +262,9 @@ int ExpressionManager::calculate_one(int num1, int num2, char op) {
 		    ans = num1 * num2;
 			break;
 		case '/':
+		    if(num2 == 0){
+				throw std::runtime_error{string{"Error: Divisor mustn't be 0."}};
+			}
 			ans = num1 / num2;
 			break;
 		case '^':
@@ -349,6 +359,7 @@ ExpressionManager::BinaryTree ExpressionManager::buildTree(const string &exp) {
 	if(!stackNode.empty()){ // 当全部读完后还有运算符没填满，异常！
 		throw std::runtime_error{string{"Error: Wrong expression of input when calling funciton 'build'"}};
 	}
+
 	return tree;
 }
 
@@ -395,6 +406,12 @@ void ExpressionManager::calculate_consts(ExpressionManager::BinaryTree root) {
 		root->val = '0' + calculate_one(root->left->val - '0', root->right->val - '0', root->val);
 	    delete root->left;
 	    delete root->right;
+		root->left = root->right = nullptr;
+	}
+	else if(isOps(root->val) && ( (std::isdigit(root->left->val) && root->left->val == '0') || (std::isdigit(root->right->val) && root->right->val == '0') ) ) {
+		root->val = '0' ;
+		delete root->left;
+		delete root->right;
 		root->left = root->right = nullptr;
 	}
 
