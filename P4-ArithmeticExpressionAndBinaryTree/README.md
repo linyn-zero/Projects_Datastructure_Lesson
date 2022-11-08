@@ -15,7 +15,9 @@
 本程序通过clion开发。
 
 本程序没有界面，最佳体验是使用命令行打开程序使用。
+
 ~~小黑框才是程序员的浪漫~~
+
 推荐使用方法：
 1. 下载后用cmd进入到该文件夹
 2. 输入```g++ main.cpp ExpressionManager.cpp -o main.exe```
