@@ -57,6 +57,9 @@ bool ExpressionManager::perform() {
 		else if(words[0] == "check"){
 			check(words);
 		}
+		else if(words[0] == "list"){
+			list(words);
+		}
 		else if(words[0] == "calt"){
 			cout << calt(words) << endl;
 		}
@@ -415,6 +418,26 @@ void ExpressionManager::calculate_consts(ExpressionManager::BinaryTree root) {
 		root->left = root->right = nullptr;
 	}
 
+}
+
+void ExpressionManager::list(vector<string> &words) const {
+	if(words.size() != 2){throw std::runtime_error{string{"Error: Function 'list' except only one parameter."}};}
+	string name = words[1];
+	auto root = getTree(name);
+	if (root == nullptr) { // 没有表达式，异常
+		throw std::runtime_error{string{"Error: Fail to find the expression '"+name+"' when calling function 'list'."}};
+	}
+	printlist(root, 0);
+	cout << endl;
+}
+
+void ExpressionManager::printlist(ExpressionManager::BinaryTree root, int inteval) const {
+    if(!root) { return; }
+	int i = inteval;
+	while(i--) { cout << " "; }
+	cout << root->val << endl;
+	printlist(root->left, inteval + 2);
+	printlist(root->right, inteval + 2);
 }
 
 

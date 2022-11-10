@@ -73,26 +73,28 @@ private:
 	}*BinaryTree;
 	unordered_map<char,int> variable_value;                 // 正在维护的变量值
 	unordered_map<string,BinaryTree> trees;                 // 正在维护的二叉树
-public:
-	~ExpressionManager();                                   // 析构，要拆树
+
+	// 成员变量管理者
 	void setValue(char, int);                               // 设置新的变量值
 	void setTree(const string &name, BinaryTree &tree);     // 设置新二叉树
 	int getValue(char);                                     // 取出变量值,无则返回0作为初值
 	BinaryTree getTree(const string &name);                 // 取出树.无则返回nullptr
 	BinaryTree getTree(const string &name) const;           // 取出树.无则返回nullptr
-
-	static void welcome();                                  // 欢迎语
-	bool perform();                                         // 根据用户的输入来确定执行什么操作
+	// perform函数的接口
 	void build(vector<string>& words);                      // 建立前缀表达式二叉树，过程中不求值
+
 	void print(vector<string>& words) const;                // 打印给定二叉树的中序表达式
 	void check(vector<string>& words) const;                // 打印给定二叉树的图像
+	void list(vector<string>& words) const;                 // 列表化打印二叉树
 	int calt(vector<string>& words);                        // 求二叉树表达式的值（未知变量初始为0）。不存进变量区
 	void merge(vector<string> words);                       // 给定运算符，合并两表达式，获得新名字，不改变原来的两棵树
 	void mergeconst(vector<string> words);                  // 将给定二叉树中的能运算的常数运算完成
 	void assign(vector<string>& words);                     // 给变量赋值,例: a=1
-
+	// perform函数接口的接口
 	BinaryTree buildTree(const string& );                   // 給定前綴表達式string,建樹,返回樹的頭節點
+
 	void printByMidOrder(BinaryTree) const;                 // print.给定二叉树头结点，以中序输出表达式
+	void printlist(BinaryTree, int) const;                  // list.给定二叉树头结点,列表化打印
 	static int getDepth(BinaryTree) ;                       // check.给定二叉树，返回层数。
 	static void printTreelike(BinaryTree, int);             // check.给定二叉树与其层数，图形化打印二叉树(使用的是线性表满二叉树，在数据较大时对使用大量内存，更正的话会使用两个子树下标数组代替）
 	int calculate_tree(BinaryTree);                         // calt.给定一棵二叉树的头结点，计算一棵二叉树的值
@@ -103,6 +105,11 @@ public:
 	static void buildExceptionDeleting(stack<BinaryTree>&); // build.给定一棵二叉树的头结点，把树拆了。用于处理build中的异常。需要把树拆了，否则内存浪费
 	static void treeDeleting(BinaryTree);                   // build&析构.给定一棵二叉树的头结点，把树拆了。
 	void calculate_consts(BinaryTree);                       // merge_const.给定一棵二叉树的头结点，将一颗树能做的常数运算完成
+
+public:
+	~ExpressionManager();                                   // 析构，要拆树
+	static void welcome();                                  // 欢迎语
+	bool perform();                                         // 根据用户的输入来确定执行什么操作
 };
 
 
