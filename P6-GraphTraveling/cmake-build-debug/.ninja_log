@@ -1,0 +1,5 @@
+# ninja log v5
+5	76	6911509978377091	CMakeFiles/P6_GraphTraveling.dir/AdjacencyList.cpp.obj	56c6af86d606923b
+10	78	6911509978377091	CMakeFiles/P6_GraphTraveling.dir/MultipleAdjacencyList.cpp.obj	e14682efee984ced
+3	1252	6923013054102711	CMakeFiles/P6_GraphTraveling.dir/main.cpp.obj	f4c6e64f59baec96
+1252	1447	6923013055988043	P6_GraphTraveling.exe	8f74d29580a14115
