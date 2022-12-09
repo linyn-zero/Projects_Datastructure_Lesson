@@ -1,7 +1,6 @@
-#include <iostream>
-#include "myDataStructure.h"
+#include "test.h"
 
 int main() {
-	std::cout << "Hello, World!" << std::endl;
+	test_dijkstra();
 	return 0;
 }

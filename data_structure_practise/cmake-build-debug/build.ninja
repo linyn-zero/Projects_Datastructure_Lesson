@@ -55,12 +55,6 @@ build CMakeFiles/data_structure_practise.dir/main.cpp.obj: CXX_COMPILER__data_st
   OBJECT_DIR = CMakeFiles\data_structure_practise.dir
   OBJECT_FILE_DIR = CMakeFiles\data_structure_practise.dir
 
-build CMakeFiles/data_structure_practise.dir/BinarySearchTree.cpp.obj: CXX_COMPILER__data_structure_practise_Debug D$:/github/Projects_Datastructure_Lesson/data_structure_practise/BinarySearchTree.cpp || cmake_object_order_depends_target_data_structure_practise
-  DEP_FILE = CMakeFiles\data_structure_practise.dir\BinarySearchTree.cpp.obj.d
-  FLAGS = -g -std=gnu++17
-  OBJECT_DIR = CMakeFiles\data_structure_practise.dir
-  OBJECT_FILE_DIR = CMakeFiles\data_structure_practise.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target data_structure_practise
@@ -69,7 +63,7 @@ build CMakeFiles/data_structure_practise.dir/BinarySearchTree.cpp.obj: CXX_COMPI
 #############################################
 # Link the executable data_structure_practise.exe
 
-build data_structure_practise.exe: CXX_EXECUTABLE_LINKER__data_structure_practise_Debug CMakeFiles/data_structure_practise.dir/main.cpp.obj CMakeFiles/data_structure_practise.dir/BinarySearchTree.cpp.obj
+build data_structure_practise.exe: CXX_EXECUTABLE_LINKER__data_structure_practise_Debug CMakeFiles/data_structure_practise.dir/main.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\data_structure_practise.dir
