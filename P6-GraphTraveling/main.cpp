@@ -3,6 +3,7 @@
 
 int main() {
 	GraphManager manager;
-	manager.welcome();
-	manager.menu()
+	GraphManager::welcome();
+	manager.menu();
+
 }

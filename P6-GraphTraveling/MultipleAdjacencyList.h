@@ -28,7 +28,7 @@ using std::string;
 template<typename ElemType>
 class MultipleAdjacencyList {
 private:
-	int numVertices,numEdges;
+	int numVertices{},numEdges{};
 	struct EdgeNode{
 		int i,j,weight;
 		EdgeNode *iLink, *jLink;
@@ -39,10 +39,10 @@ private:
 	void printAns(const vector<int>& ansVertex, const vector<EdgeNode*>& ansEdge) const{
 		if(ansVertex.size() != numVertices) { cout << endl << "ansVertex.size() goes wrong !!" << endl; }
 		if(ansEdge.size() != numVertices-1) { cout << endl << "ansEdge.size() goes wrong !!" << endl; }
-		cout << "Node:  " << ansVertex[0] ;
-		for(int i = 1; i < numVertices; i++){
-			cout << " -> " << ansVertex[i] << "(" << ansEdge[i-1]->weight << ")" ;
-		} cout << endl << endl;
+//		cout << "Node:  " << ansVertex[0] ;
+//		for(int i = 1; i < numVertices; i++){
+//			cout << " -> " << ansVertex[i] << "(" << ansEdge[i-1]->weight << ")" ;
+//		} cout << endl << endl;
 		cout << "city: " << name2subscript_Map.at(ansVertex[0]);
 		for(int i = 1; i < numVertices; i++){
 			cout << " -> " << name2subscript_Map.at(ansVertex[i]) << "(" << ansEdge[i-1]->weight << ")" ;
@@ -50,7 +50,7 @@ private:
 	}
 	void addEdgeWithoutDirection(int i, int j, int w){
 		// 头插法
-		EdgeNode* e = new EdgeNode(i,j,w);
+		auto* e = new EdgeNode(i,j,w);
 		if(mulAdj[i] == nullptr) { mulAdj[i] = e; }
 		else{
 			e->iLink = mulAdj[i];
@@ -63,11 +63,16 @@ private:
 		};
 	}
 public:
-	void setNumVertex(int i) {numVertices = i;}
+	void setNumVertex(int i) {
+		numVertices = i;
+		mulAdj.resize(i);
+	}
 	void setNumEdge(int i) { numEdges = i; }
-	[[nodiscard]] const int getNumVertex() const { return numVertices; }
-	[[nodiscard]] const int getNumEdge() const { return numEdges;}
+	[[nodiscard]] int getNumVertex() const { return numVertices; }
+	[[nodiscard]] int getNumEdge() const { return numEdges;}
 	explicit MultipleAdjacencyList(int v, int e) : numVertices(v), numEdges(e), mulAdj(v, nullptr){}
+
+	MultipleAdjacencyList() = default;
 	void createWithoutDirection(const vector<vector<int>>& edges){
 		for(const vector<int>& edge : edges){
 			int i = edge[0], j = edge[1], w = edge[2];
@@ -100,7 +105,6 @@ public:
 					ansEdge.emplace_back(p);
 					visited[b] = true;
 					queue.push(b);
-					cout << b << " ";
 				}
 			}
 		}

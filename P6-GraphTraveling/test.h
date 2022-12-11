@@ -44,40 +44,59 @@ void test_new(){
 		cout << a[i] << " ";
 	}
 }
-void test_MultipleAdjacencyList(){
-	MultipleAdjacencyList<string> a(7,9);
-	a.setName();
-	a.createWithoutDirection();
-	for(int i = 0; i < 7; i++){
-		a.BFSTravel(i);
+//void test_MultipleAdjacencyList(){
+//	MultipleAdjacencyList<string> a(7,9);
+//	a.setName();
+//	a.createWithoutDirection();
+//	for(int i = 0; i < 7; i++){
+//		a.BFSTravel(i);
+//	}
+//	for(int i = 0; i < 7; i++){
+//		a.DFSTravel(i);
+//	}
+//	/*
+//0 1 1
+//0 2 2
+//0 5 5
+//1 3 3
+//1 5 5
+//1 6 6
+//2 5 5
+//3 4 4
+//4 5 5
+//	 *
+//	 */
+//}
+//void test_AdjacencyList(){
+//	AdjacencyList<string> a(7,9);
+//	a.setName();
+//	a.createWithoutDirection();
+//	a.printList();
+//
+//	for(int i = 0; i < 7; i++){
+//		a.BFSTree(i);
+//	}
+//	for(int i = 0; i < 7; i++){
+//		a.DFSTree(i);
+//	}
+//}
+void test_dijkstra(){
+	int v,e; cin >> v >> e;
+	AdjacencyList<string> a(v,e);
+	int t = v;
+	vector<string> names;
+	while(t--){
+		string name; cin >> name;
+		names.emplace_back(name);
 	}
-	for(int i = 0; i < 7; i++){
-		a.DFSTravel(i);
+	a.setName(names);
+	t = e;
+	vector<vector<int>> edges;
+	while(t--){
+		int i,j,w; cin >> i >> j >> w;
+		edges.emplace_back(vector<int>({i,j,w}));
 	}
-	/*
-0 1 1
-0 2 2
-0 5 5
-1 3 3
-1 5 5
-1 6 6
-2 5 5
-3 4 4
-4 5 5
-	 *
-	 */
-}
-void test_AdjacencyList(){
-	AdjacencyList<string> a(7,9);
-	a.setName();
-	a.createWithoutDirection();
-	a.printList();
-
-	for(int i = 0; i < 7; i++){
-		a.BFSTree(i);
-	}
-	for(int i = 0; i < 7; i++){
-		a.DFSTree(i);
-	}
+	a.createWithoutDirection(edges);
+	a.dijkstra(12);
 }
 #endif //P6_GRAPHTRAVELING_TEST_H

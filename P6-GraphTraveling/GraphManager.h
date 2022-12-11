@@ -8,12 +8,12 @@
 #include "myStack.h"
 #include "MultipleAdjacencyList.h"
 #include "AdjacencyList.h"
-// ç®€å•ç”¨åºå·è¿›è¡Œç”¨æˆ·äº¤äº’å°±å¥½äº†
+// ¼òµ¥ÓÃĞòºÅ½øĞĞÓÃ»§½»»¥¾ÍºÃÁË
 class GraphManager {
 private:
 	MultipleAdjacencyList<string> mulGraph;
 	AdjacencyList<string> graph;
-	int getInteger(int i) {
+	static int getInteger(int i) {
 		string input;
 		cin >> input;
 		while(!std::isdigit(input[0])){
@@ -28,27 +28,34 @@ private:
 			     << "Try again?" << endl
 			     << ">>> ";
 			cin >> input;
+			res = std::stoi(input);
 		}
 		return res;
 	}
 	int initialContainer(){
-		// è¾“å…¥ç‚¹æ•°ä¸è¾¹æ•°
+		// ÊäÈëµãÊıÓë±ßÊı
+		cout << "Please input the number of vertex and edge:"
+		     << endl << ">>> ";
 		int v,e; cin >> v >> e;
-		// è¾“å…¥åå­—æ˜ å°„
+		// ÊäÈëÃû×ÖÓ³Éä
+		cout << "Please input the names' map:" << endl
+		     << " >>>";
 		int t = v;
 		vector<string> names;
 		while(t--){
 			string name; cin >> name;
 			names.emplace_back(name);
 		}
-		// è¾“å…¥è¾¹é›†
+		// ÊäÈë±ß¼¯
+		cout << "Please input the edge set: " << endl
+		     << " >>>" ;
 		t = e;
-		vector<vector<int>> edges(e);
+		vector<vector<int>> edges;
 		while(t--){
 			int i,j,w; cin >> i >> j >> w;
 			edges.emplace_back(vector<int>({i,j,w}));
 		}
-		// åˆå§‹åŒ–ä¸¤è€…
+		// ³õÊ¼»¯Á½Õß
 		mulGraph.setNumVertex(v);
 		mulGraph.setNumEdge(e);
 		mulGraph.setName(names);
@@ -60,18 +67,19 @@ private:
 		return v;
 	}
 	void order(){
-		// åˆå§‹åŒ–å®¹å™¨
+		// ³õÊ¼»¯ÈİÆ÷
 		int startLimit = initialContainer();
-		// ä½¿ç”¨ä»‹ç»
-		cout << "What would you like to do with this Graph: " << std::endl
-		     << "1. MultipleAdjacencyList's BFSTravel" << std::endl
-		     << "2. MultipleAdjacencyList's DFSTravel" << std::endl
-		     << "3. AdjacencyList's BFSTree" << std::endl
-		     << "4. AdjacencyList's DFSTravel" << endl
-		     << "0. quit" << endl << endl
-		     << ">>> " ;
 		while(true){
-			int command = getInteger(4);
+			// Ê¹ÓÃ½éÉÜ
+			cout << "What would you like to do with this Graph: " << std::endl
+			     << "1. MultipleAdjacencyList's BFSTravel" << std::endl
+			     << "2. MultipleAdjacencyList's DFSTravel" << std::endl
+			     << "3. AdjacencyList's BFSTree" << std::endl
+			     << "4. AdjacencyList's DFSTravel" << endl
+				 << "5. Dijkstra" << endl
+			     << "0. quit" << endl
+			     << ">>> " ;
+			int command = getInteger(5);
 			int start ;
 			switch (command) {
 				case 0:
@@ -96,20 +104,26 @@ private:
 					start = getInteger(startLimit);
 					graph.DFSTree(start);
 					break;
+				case 5:
+					cout << "Please input start vertex" << endl << ">>> ";
+					start = getInteger(startLimit);
+					graph.dijkstra(start);
+					break;
 			}
 		}
 	}
 public:
-	void welcome(){
-		// æ¬¢è¿è¯­
+	GraphManager()= default;
+	static void welcome(){
+		// »¶Ó­Óï
 		cout << "A Program made by linyn." << endl << endl;
 	}
 	void menu(){
-		// ä½¿ç”¨ä»‹ç»
-		cout << "0. quit" << endl
-		     << "1. create a new Graph." << endl << endl
-			 << ">>> ";
 		while(true){
+			// Ê¹ÓÃ½éÉÜ
+			cout << "0. quit" << endl
+			     << "1. create a new Graph." << endl
+			     << ">>> ";
 			int command = getInteger(1);
 			switch (command) {
 				case 0:
@@ -124,16 +138,16 @@ public:
 
 /**
  * TODo
- * 1. myStack âˆš
- * 2. æœ‰æƒæ— å‘é‚»æ¥è¡¨ âˆš
- * 3. æœ‰æƒæ— å‘é‚»æ¥å¤šé‡è¡¨ âˆš
-(1) ä»¥é‚»æ¥å¤šé‡è¡¨ä¸ºå­˜å‚¨ç»“æ„ï¼Œå®ç°è”é€šæ— å‘å›¾çš„æ·±åº¦ä¼˜å…ˆå’Œå¹¿åº¦ä¼˜å…ˆéå†ã€‚ä»¥æŒ‡å®šçš„ç»“ç‚¹ä¸ºèµ·ç‚¹ï¼Œ
- åˆ†åˆ«è¾“å‡ºæ¯ç§éå†ä¸‹çš„ç»“ç‚¹è®¿é—®åºåˆ—å’Œç›¸åº”ç”Ÿæˆæ ‘çš„è¾¹é›†ã€‚ âˆš
-(2) å€ŸåŠ©äºæ ˆç±»å‹ï¼ˆè‡ªè¡Œå®šä¹‰å’Œå®ç°ï¼‰ï¼Œç”¨éé€’å½’ç®—æ³•å®ç°æ·±åº¦ä¼˜å…ˆéå†ã€‚ âˆš
-(3) ä»¥é‚»æ¥è¡¨ä¸ºå­˜å‚¨ç»“æ„ï¼Œå»ºç«‹æ·±åº¦ä¼˜å…ˆç”Ÿæˆæ ‘å’Œå¹¿åº¦ä¼˜å…ˆç”Ÿæˆæ ‘ï¼Œå¹¶ä»¥æ ‘å½¢è¾“å‡ºç”Ÿæˆæ ‘ã€‚ âˆš
- * 4. ç®¡ç†å™¨ âˆš
- * 5. ç”¨æ ‡å‡†æ ·ä¾‹æµ‹è¯•
- * 6. ä¼˜åŒ–è¾“å‡ºæ ¼å¼
+ * 1. myStack ¡Ì
+ * 2. ÓĞÈ¨ÎŞÏòÁÚ½Ó±í ¡Ì
+ * 3. ÓĞÈ¨ÎŞÏòÁÚ½Ó¶àÖØ±í ¡Ì
+(1) ÒÔÁÚ½Ó¶àÖØ±íÎª´æ´¢½á¹¹£¬ÊµÏÖÁªÍ¨ÎŞÏòÍ¼µÄÉî¶ÈÓÅÏÈºÍ¹ã¶ÈÓÅÏÈ±éÀú¡£ÒÔÖ¸¶¨µÄ½áµãÎªÆğµã£¬
+ ·Ö±ğÊä³öÃ¿ÖÖ±éÀúÏÂµÄ½áµã·ÃÎÊĞòÁĞºÍÏàÓ¦Éú³ÉÊ÷µÄ±ß¼¯¡£ ¡Ì
+(2) ½èÖúÓÚÕ»ÀàĞÍ£¨×ÔĞĞ¶¨ÒåºÍÊµÏÖ£©£¬ÓÃ·Çµİ¹éËã·¨ÊµÏÖÉî¶ÈÓÅÏÈ±éÀú¡£ ¡Ì
+(3) ÒÔÁÚ½Ó±íÎª´æ´¢½á¹¹£¬½¨Á¢Éî¶ÈÓÅÏÈÉú³ÉÊ÷ºÍ¹ã¶ÈÓÅÏÈÉú³ÉÊ÷£¬²¢ÒÔÊ÷ĞÎÊä³öÉú³ÉÊ÷¡£ ¡Ì
+ * 4. ¹ÜÀíÆ÷ ¡Ì
+ * 5. ÓÃ±ê×¼ÑùÀı²âÊÔ
+ * 6. ÓÅ»¯Êä³ö¸ñÊ½
 
 */
 
