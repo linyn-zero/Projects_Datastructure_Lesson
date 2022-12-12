@@ -237,11 +237,13 @@ public:
 		while(true){
 			// 输入目的地，查询线路
 			cout << "Please input a index, then you will get a route:" << endl;
-			cout << "-1. quit" << endl;
+			cout << "0. quit" << endl;
 			for(auto &[index,name] : name2subscript_Map){
-				cout << index << ". " << name << endl;
+				cout << index+1 << ". " << name << endl;
 			} cout << ">>> " ;
-			int index = getInteger(getNumVertex()-1);
+			int index = getInteger(getNumVertex());
+			if(index == 0) {return;}
+			index--;
 			if(index == i) { cout << "you are already at " << name2subscript_Map.at(index) << endl; continue;}
 			else { cout << "it's " << distance[index] << "km from " << name2subscript_Map.at(index) <<":"<< endl << "    "; }
 			// 回溯路径

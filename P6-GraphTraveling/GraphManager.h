@@ -75,7 +75,7 @@ private:
 			     << "1. MultipleAdjacencyList's BFSTravel" << std::endl
 			     << "2. MultipleAdjacencyList's DFSTravel" << std::endl
 			     << "3. AdjacencyList's BFSTree" << std::endl
-			     << "4. AdjacencyList's DFSTravel" << endl
+			     << "4. AdjacencyList's DFSTree" << endl
 				 << "5. Dijkstra" << endl
 			     << "0. quit" << endl
 			     << ">>> " ;
