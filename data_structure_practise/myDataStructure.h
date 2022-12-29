@@ -4,9 +4,9 @@
 
 #ifndef DATA_STRUCTURE_PRACTISE_MYDATASTRUCTURE_H
 #define DATA_STRUCTURE_PRACTISE_MYDATASTRUCTURE_H
-//#include "BinarySearchTree.h"
 #include "myGraph.h"
 #include "Disjoint_set.h"
-#include "binaryHeap.h"
-#include "LeftistHeap.h"
+#include "myHeap.h"
+#include "myTree.h"
+#include "myStack.h"
 #endif //DATA_STRUCTURE_PRACTISE_MYDATASTRUCTURE_H
